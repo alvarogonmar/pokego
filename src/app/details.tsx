@@ -2,7 +2,12 @@ import { useLocalSearchParams } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function details() {
-  const params = useLocalSearchParams();
+  const params = useLocalSearchParams<{
+    name: string;
+    type: string;
+    color: string;
+    image: string;
+  }>();
   return (
     <View style={{ flex: 1, backgroundColor: params.color }}>
       <Text style={styles.name}>{params.name}</Text>
